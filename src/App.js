@@ -8,20 +8,31 @@ import React, { Component } from 'react'
 
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      loading:false,
+       users: []
+    }
+  }
 
 componentDidMount() {
+  this.setState({loading:true})
   fetch("https://api.github.com/users")
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => this.setState({users:data, loading:false}));
+
+;
 
 }
-
+3
   render() {
     return (
       <div>
       <Navbar />
        <div className="container mt-3">
-        <UserList/>
+        <UserList users={this.state.users} loading={this.state.loading}/>
       </div>
       </div>
        
