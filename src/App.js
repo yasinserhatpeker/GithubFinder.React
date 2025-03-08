@@ -18,10 +18,16 @@ export class App extends Component {
   }
 
 componentDidMount() {
+
   this.setState({loading:true})
-  fetch("https://api.github.com/users")
-  .then(response => response.json())
-  .then(data => this.setState({users:data, loading:false}));
+
+  setTimeout(()=> {
+    fetch("https://api.github.com/users")
+    .then(response => response.json())
+    .then(data => this.setState({users:data, loading:false}));
+
+  },1000)
+  
 
 ;
 

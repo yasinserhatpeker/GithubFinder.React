@@ -5,11 +5,15 @@ export class Navbar extends Component {
   render() {
     return (
       <nav className='navbar navbar-dark bg-dark'>
-        <div className="container">
-         <a href="/" className='navbar-brand'>
-         <i className={this.props.icon}> </i> {this.props.title}
+        <div className="container d-flex justify-content-center align-items-center" >
+          <a href="/" className='navbar-brand'>
+          
+            
+            
+           <i className={this.props.icon}> </i> {this.props.title}
          </a>
         </div>
+          
          
       </nav>
     )
