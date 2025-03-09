@@ -36,6 +36,7 @@ export class Search extends Component {
                 
             </div>
          </form>
+         <button className='btn btn-outline-danger mt-3 btn-block'>Clear All</button>
        </div>
     )
   }
