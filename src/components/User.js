@@ -17,7 +17,7 @@ export class User extends Component {
                        <hr />
                        
                      <div className=" d-flex justify-content-between"> 
-                    <a href={html_url}  className="btn btn-outline-dark"  target="_blank" rel="noreferrer" >my Github Profile</a>
+                    <a href={html_url}  className="btn btn-outline-dark"  target="_blank" rel="noreferrer" >Github Profile</a>
                    
                      </div>
                     </div>   
