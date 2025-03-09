@@ -19,7 +19,7 @@ export class Search extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     if(this.state.keyword==='') {
-       this.props.displayAlert("Enter the name please",'danger')
+       this.props.displayAlert("Enter the username please",'danger')
     }
     else {
         

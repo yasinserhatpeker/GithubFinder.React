@@ -8,6 +8,7 @@ import Search from "./components/Search";
 
 import React, { Component } from 'react'
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import Alert from "./components/Alert";
 
 
 export class App extends Component {
@@ -47,6 +48,12 @@ export class App extends Component {
 
       }
     })
+    setTimeout(()=> {
+      this.setState({
+        error:null
+      })
+
+    },2000)
   }
 
   render() {
@@ -59,6 +66,7 @@ export class App extends Component {
        clearResult={this.clearResult} 
        showClearButton={this.state.users.length > 0 ? true : false }
        />
+       <Alert error={this.state.error}/>
        <div className="container mt-3">
         <UserList users={this.state.users} loading={this.state.loading}/>
       </div>
