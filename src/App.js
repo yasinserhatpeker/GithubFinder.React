@@ -16,7 +16,8 @@ export class App extends Component {
   
     this.state = {
       loading:false,
-       users: []
+       users: [],
+       error: null
     }
   }
    
@@ -38,12 +39,26 @@ export class App extends Component {
       users: []
     })
   }
+  displayAlert= (msg,type)=> {
+    this.setState({
+      error: {
+        msg:msg,
+        type:type
+
+      }
+    })
+  }
 
   render() {
     return (
       <div>
       <Navbar />
-       <Search searchUsers={this.searchUsers} clearResult={this.clearResult} showClearButton={this.state.users.length > 0 ? true : false }/>
+       <Search 
+       displayAlert={this.displayAlert}
+       searchUsers={this.searchUsers} 
+       clearResult={this.clearResult} 
+       showClearButton={this.state.users.length > 0 ? true : false }
+       />
        <div className="container mt-3">
         <UserList users={this.state.users} loading={this.state.loading}/>
       </div>

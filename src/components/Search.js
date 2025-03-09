@@ -18,10 +18,17 @@ export class Search extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.searchUsers(this.state.keyword);
-    this.setState({
-        keyword:''
-    })
+    if(this.state.keyword==='') {
+       this.props.displayAlert("Enter the name please",'danger')
+    }
+    else {
+        
+        this.props.searchUsers(this.state.keyword);
+        this.setState({
+            keyword:''
+        })
+
+    }
        
 }
 
